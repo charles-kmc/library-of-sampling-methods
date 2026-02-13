@@ -1,0 +1,42 @@
+# Basic Site Settings
+title: "Bank of Sampling Methods"
+description: "A comprehensive guide to sampling algorithms with interactive notebooks"
+baseurl: "/bank-of-sampling-methods"
+url: ""
+
+# Build settings
+markdown: kramdown
+theme: jekyll-theme-cayman
+
+# Disable all GitHub metadata
+github: [metadata]
+repository: false
+
+# Don't use any plugins that require GitHub
+plugins: []
+
+# Markdown processing
+kramdown:
+  math_engine: mathjax
+  syntax_highlighter: rouge
+  input: GFM
+
+# Default layouts
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+# Exclude these files from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - README.md
