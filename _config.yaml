@@ -29,12 +29,11 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      author: "Your Name"
+      author: "Joel & Charlesquin"
   - scope:
       path: ""
     values:
       layout: "default"
-
 
 # Add this to your _config.yml
 collections:
@@ -52,13 +51,13 @@ defaults:
       type: "start"
     values:
       layout: "start-tutorial"
-      author: "Your Name"
+      author: "Joel & Charlesquin"
   - scope:
       path: ""
       type: "posts"
     values:
       layout: "post"
-      author: "Your Name"
+      author: "Joel & Charlesquin"
   - scope:
       path: ""
     values:

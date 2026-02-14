@@ -19,7 +19,7 @@
     {% feed_meta %}
   </head>
   <body>
-    <!-- Navigation Bar (appears on EVERY page) -->
+    <!-- Navigation Bar - This appears on EVERY page -->
     <div class="top-nav">
       <a href="{{ site.baseurl }}/" class="nav-link">Home</a>
       <a href="{{ site.baseurl }}/start" class="nav-link">Start</a>
@@ -28,19 +28,20 @@
       <a href="{{ site.baseurl }}/projects" class="nav-link">Projects</a>
     </div>
 
-    <!-- Main Content (this is where your page content goes) -->
+    <!-- Main Content - This is where your page content goes -->
     <main class="page-content">
       <div class="container">
         {{ content }}
       </div>
     </main>
 
-    <!-- Footer (appears on EVERY page) -->
+    <!-- Footer - This appears on EVERY page -->
     <footer class="site-footer">
       <div class="container">
-        <p>&copy; {{ site.time | date: '%Y' }} Library of Sampling Methods. 
-        Powered by <a href="https://jekyllrb.com/">Jekyll</a> and 
-        <a href="https://pages.github.com/">GitHub Pages</a>.</p>
+        <div class="footer-content">
+          <p>&copy; {{ site.time | date: '%Y' }} Library of Sampling Methods</p>
+          <p>Powered by <a href="https://jekyllrb.com/">Jekyll</a> and <a href="https://pages.github.com/">GitHub Pages</a></p>
+        </div>
       </div>
     </footer>
 
@@ -57,7 +58,8 @@
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         line-height: 1.6;
         color: #333;
-        background: #fafafa;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        min-height: 100vh;
       }
 
       .container {
@@ -66,40 +68,60 @@
         padding: 0 20px;
       }
 
-      /* Navigation Bar - appears on all pages */
+      /* Navigation Bar - Beautiful gradient background */
       .top-nav {
         display: flex;
         justify-content: center;
         gap: 2rem;
-        padding: 1.5rem;
-        background: white;
-        border-bottom: 2px solid #f0f0f0;
+        padding: 1.2rem 2rem;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         position: sticky;
         top: 0;
         z-index: 1000;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(255,255,255,0.1);
       }
 
       .nav-link {
-        color: #333;
+        color: white;
         text-decoration: none;
         font-size: 1.1rem;
         font-weight: 500;
-        padding: 0.5rem 1rem;
-        border-radius: 5px;
+        padding: 0.6rem 1.5rem;
+        border-radius: 50px;
         transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .nav-link::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.2);
+        transition: width 0.6s, height 0.6s;
+      }
+
+      .nav-link:hover::before {
+        width: 200px;
+        height: 200px;
       }
 
       .nav-link:hover {
-        color: #667eea;
-        background: #f8f9fa;
+        transform: translateY(-2px);
+        text-shadow: 0 2px 4px rgba(0,0,0,0.2);
       }
 
       /* Active page highlighting */
       .nav-link.active {
-        color: #667eea;
-        font-weight: 600;
-        background: #f0f4ff;
+        background: rgba(255,255,255,0.2);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       }
 
       /* Main content area */
@@ -108,23 +130,31 @@
         padding: 2rem 0;
       }
 
-      /* Footer */
+      /* Footer with matching gradient */
       .site-footer {
-        background: white;
-        border-top: 1px solid #f0f0f0;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
         padding: 2rem 0;
         margin-top: 4rem;
         text-align: center;
-        color: #666;
+        border-top: 1px solid rgba(255,255,255,0.1);
+      }
+
+      .footer-content p {
+        margin: 0.5rem 0;
+        opacity: 0.9;
       }
 
       .site-footer a {
-        color: #667eea;
+        color: white;
         text-decoration: none;
+        font-weight: 500;
+        border-bottom: 1px dotted rgba(255,255,255,0.5);
       }
 
       .site-footer a:hover {
-        text-decoration: underline;
+        opacity: 1;
+        border-bottom: 1px solid white;
       }
 
       /* Responsive design */
@@ -136,8 +166,8 @@
         }
         
         .nav-link {
-          font-size: 0.95rem;
-          padding: 0.4rem 0.8rem;
+          font-size: 0.9rem;
+          padding: 0.4rem 1rem;
         }
         
         .page-content {
@@ -157,21 +187,48 @@
       .mb-4 {
         margin-bottom: 2rem;
       }
+
+      /* Beautiful scrollbar */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 5px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+      }
     </style>
 
     <!-- JavaScript for active link highlighting -->
     <script>
-      // Highlight the current page in navigation
       document.addEventListener('DOMContentLoaded', function() {
         const currentPath = window.location.pathname;
         const navLinks = document.querySelectorAll('.nav-link');
         
         navLinks.forEach(link => {
           const linkPath = link.getAttribute('href');
+          
+          // Remove trailing slashes for comparison
+          const cleanCurrent = currentPath.replace(/\/$/, '');
+          const cleanLink = linkPath.replace(/\/$/, '');
+          
           // Check if this link matches the current page
-          if (currentPath === linkPath || 
-              currentPath === linkPath + '/' ||
-              (linkPath === '{{ site.baseurl }}/' && currentPath === '{{ site.baseurl }}')) {
+          if (cleanCurrent === cleanLink || 
+              (cleanLink === '{{ site.baseurl }}' && cleanCurrent === '{{ site.baseurl }}') ||
+              (cleanLink === '{{ site.baseurl }}/' && cleanCurrent === '{{ site.baseurl }}')) {
+            link.classList.add('active');
+          }
+          
+          // Special case for home
+          if (cleanLink === '{{ site.baseurl }}/' && cleanCurrent === '{{ site.baseurl }}') {
             link.classList.add('active');
           }
         });
