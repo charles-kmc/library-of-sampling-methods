@@ -17,7 +17,7 @@ title: Home
   <h1>🎲 Sampling Algorithms</h1>
   <p class="subtitle">A Visual Tutorial Series</p>
   
-  <!-- Math Header from your image -->
+  <!-- Math Header from your image
   <div class="math-header">
     <div class="math-content">
       <span class="math-text">A (resp. lower bound) to a given</span>
@@ -26,7 +26,7 @@ title: Home
     <div class="math-equation">
       \[t + \text{error}\]
     </div>
-  </div>
+  </div> -->
 </div>
 
 <!-- Welcome Section -->
