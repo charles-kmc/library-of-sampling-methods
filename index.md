@@ -4,20 +4,20 @@ title: Home
 ---
 
 <!-- Navigation Bar -->
-<div class="top-nav">
+<!-- <div class="top-nav">
   <a href="{{ site.baseurl }}/" class="nav-link">Home</a>
   <a href="{{ site.baseurl }}/start" class="nav-link">Start</a>
   <a href="{{ site.baseurl }}/sampling-tools" class="nav-link">Sampling tools</a>
   <a href="{{ site.baseurl }}/examples" class="nav-link">Examples</a>
   <a href="{{ site.baseurl }}/projects" class="nav-link">Projects</a>
-</div>
+</div> -->
 
 <!-- Hero Section with Math Header -->
 <div class="hero-section">
   <h1>🎲 Sampling Algorithms</h1>
   <p class="subtitle">A Visual Tutorial Series</p>
   
-  <!-- Math Header from your image
+  <!-- Math Header from your image -->
   <div class="math-header">
     <div class="math-content">
       <span class="math-text">A (resp. lower bound) to a given</span>
@@ -26,7 +26,7 @@ title: Home
     <div class="math-equation">
       \[t + \text{error}\]
     </div>
-  </div> -->
+  </div>
 </div>
 
 <!-- Welcome Section -->
