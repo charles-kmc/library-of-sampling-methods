@@ -34,3 +34,32 @@ defaults:
       path: ""
     values:
       layout: "default"
+
+
+# Add this to your _config.yml
+collections:
+  start:
+    output: true
+    permalink: /start/:name/
+  tutorials:
+    output: true
+    permalink: /:collection/:name
+
+# Defaults for the new collection
+defaults:
+  - scope:
+      path: ""
+      type: "start"
+    values:
+      layout: "start-tutorial"
+      author: "Your Name"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Your Name"
+  - scope:
+      path: ""
+    values:
+      layout: "default"

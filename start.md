@@ -19,43 +19,34 @@ title: Get Started with Sampling
 
 <div class="learning-path">
   <h2>Learning Path</h2>
+  <p class="path-description">Follow these steps in order to build a solid foundation</p>
+  
   <div class="path-steps">
+    {% assign tutorials = site.start | sort: 'order' %}
+    {% for tutorial in tutorials %}
     <div class="step">
-      <div class="step-number">1</div>
+      <div class="step-number">{{ tutorial.order }}</div>
       <div class="step-content">
-        <h3>What is Sampling?</h3>
-        <p>Understand the basics and why sampling matters</p>
-        <a href="{{ site.baseurl }}/2026/02/13/intro-to-sampling" class="step-link">Start →</a>
+        <div class="step-icon">{{ tutorial.icon }}</div>
+        <h3>{{ tutorial.title }}</h3>
+        <p>{{ tutorial.description }}</p>
+        <a href="{{ site.baseurl }}{{ tutorial.url }}" class="step-link">
+          Start 
+          <i class="fas fa-arrow-right"></i>
+        </a>
       </div>
     </div>
-    
-    <div class="step">
-      <div class="step-number">2</div>
-      <div class="step-content">
-        <h3>Probability Refresher</h3>
-        <p>Review PDFs, CDFs, and random variables</p>
-        <a href="#" class="step-link">Start →</a>
-      </div>
-    </div>
-    
-    <div class="step">
-      <div class="step-number">3</div>
-      <div class="step-content">
-        <h3>Your First Sampler</h3>
-        <p>Build a simple sampler from scratch</p>
-        <a href="#" class="step-link">Start →</a>
-      </div>
-    </div>
-    
-    <div class="step">
-      <div class="step-number">4</div>
-      <div class="step-content">
-        <h3>Basic Methods</h3>
-        <p>Learn inverse transform and rejection sampling</p>
-        <a href="{{ site.baseurl }}/2026/02/13/rejection-sampling" class="step-link">Start →</a>
-      </div>
-    </div>
+    {% endfor %}
   </div>
+</div>
+
+<!-- Progress Tracker -->
+<div class="progress-tracker">
+  <h3>Your Progress</h3>
+  <div class="progress-bar-container">
+    <div class="progress-bar" style="width: 0%" id="progress-bar"></div>
+  </div>
+  <p class="progress-text">0/{{ site.start | size }} completed</p>
 </div>
 
 <style>
@@ -76,21 +67,28 @@ title: Get Started with Sampling
 }
 
 .learning-path {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
   padding: 2rem;
 }
 
 .learning-path h2 {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 0.5rem;
   color: #333;
+  font-size: 2rem;
+}
+
+.path-description {
+  text-align: center;
+  color: #666;
+  margin-bottom: 3rem;
 }
 
 .path-steps {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .step {
@@ -101,6 +99,14 @@ title: Get Started with Sampling
   padding: 1.5rem;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.step:hover {
+  transform: translateX(10px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+  border-color: #667eea;
 }
 
 .step-number {
@@ -119,22 +125,85 @@ title: Get Started with Sampling
 
 .step-content {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.step-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
 }
 
 .step-content h3 {
   color: #333;
   margin-bottom: 0.5rem;
+  font-size: 1.3rem;
 }
 
 .step-content p {
   color: #666;
   margin-bottom: 1rem;
+  line-height: 1.6;
 }
 
 .step-link {
+  align-self: flex-start;
   color: #667eea;
   text-decoration: none;
   font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #f0f4ff;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.step-link:hover {
+  background: #667eea;
+  color: white;
+  gap: 1rem;
+}
+
+.step-link i {
+  font-size: 0.8rem;
+}
+
+/* Progress Tracker */
+.progress-tracker {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.progress-tracker h3 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.progress-bar-container {
+  height: 10px;
+  background: #f0f0f0;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  border-radius: 5px;
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  color: #666;
+  font-size: 0.9rem;
 }
 
 .active {
@@ -148,5 +217,45 @@ title: Get Started with Sampling
     align-items: center;
     text-align: center;
   }
+  
+  .step-link {
+    align-self: center;
+  }
+  
+  .step-icon {
+    margin-bottom: 0.5rem;
+  }
 }
 </style>
+
+<script>
+// Simple progress tracker using localStorage
+document.addEventListener('DOMContentLoaded', function() {
+  const totalSteps = {{ site.start | size }};
+  let completed = 0;
+  
+  // Check which tutorials are completed
+  document.querySelectorAll('.step').forEach((step, index) => {
+    const tutorialUrl = step.querySelector('.step-link').getAttribute('href');
+    if (localStorage.getItem('completed_' + tutorialUrl) === 'true') {
+      step.classList.add('completed');
+      completed++;
+    }
+  });
+  
+  // Update progress bar
+  const progressPercent = (completed / totalSteps) * 100;
+  document.getElementById('progress-bar').style.width = progressPercent + '%';
+  document.querySelector('.progress-text').textContent = 
+    `${completed}/${totalSteps} completed`;
+  
+  // Mark as completed when clicking start
+  document.querySelectorAll('.step-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+      // Don't prevent default - we want to navigate
+      const tutorialUrl = this.getAttribute('href');
+      localStorage.setItem('completed_' + tutorialUrl, 'true');
+    });
+  });
+});
+</script>
