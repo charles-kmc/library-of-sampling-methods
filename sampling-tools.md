@@ -3,197 +3,323 @@ layout: default
 title: Sampling Tools
 ---
 
-<!-- Navigation Bar -->
-<!-- <div class="top-nav">
-  <a href="{{ site.baseurl }}/" class="nav-link">Home</a>
-  <a href="{{ site.baseurl }}/start" class="nav-link">Start</a>
-  <a href="{{ site.baseurl }}/sampling-tools" class="nav-link active">Sampling tools</a>
-  <a href="{{ site.baseurl }}/examples" class="nav-link">Examples</a>
-  <a href="{{ site.baseurl }}/projects" class="nav-link">Projects</a>
-</div> -->
+<!-- Navigation Bar (from default layout) -->
 
-<div class="page-header">
+<div class="tools-hero">
   <h1>🔧 Sampling Tools</h1>
-  <p>A comprehensive collection of sampling algorithms</p>
+  <p>A comprehensive collection of sampling algorithms, dynamically loaded from our library</p>
 </div>
 
-<div class="tools-category">
-  <h2>Basic Methods</h2>
+<!-- Group tools by category -->
+{% assign basic_tools = site.tools | where: "category", "basic" | sort: "order" %}
+{% assign mcmc_tools = site.tools | where: "category", "mcmc" | sort: "order" %}
+{% assign advanced_tools = site.tools | where: "category", "advanced" | sort: "order" %}
+
+<!-- Basic Methods Section -->
+<section class="tools-section">
+  <h2>📦 Basic Methods</h2>
+  <p class="section-description">Fundamental sampling techniques for simple distributions</p>
+  
   <div class="tools-grid">
-    <div class="tool-card">
-      <h3>🎲 Inverse Transform</h3>
-      <p>The simplest approach when you have the CDF. Works for any 1D distribution.</p>
-      <div class="tool-meta">
-        <span class="difficulty">★☆☆</span>
-        <span class="type">Direct</span>
+    {% for tool in basic_tools %}
+    <div class="tool-card" data-aos="fade-up">
+      <div class="tool-card-header">
+        <span class="tool-icon">{{ tool.icon }}</span>
+        <span class="tool-difficulty">{{ tool.difficulty }}</span>
       </div>
-      <a href="#" class="tool-link">Learn More →</a>
-    </div>
-    
-    <div class="tool-card">
-      <h3>📦 Rejection Sampling</h3>
-      <p>Sample from any distribution using a simpler proposal distribution.</p>
-      <div class="tool-meta">
-        <span class="difficulty">★★☆</span>
-        <span class="type">Direct</span>
+      <h3>{{ tool.title }}</h3>
+      <p>{{ tool.description }}</p>
+      <div class="tool-card-footer">
+        <span class="tool-type">{{ tool.type }}</span>
+        <a href="{{ site.baseurl }}{{ tool.url }}" class="tool-link">
+          Learn More <i class="fas fa-arrow-right"></i>
+        </a>
       </div>
-      <a href="{{ site.baseurl }}/2026/02/13/rejection-sampling" class="tool-link">Learn More →</a>
     </div>
-    
-    <div class="tool-card">
-      <h3>⚖️ Importance Sampling</h3>
-      <p>Weighted samples for expectation estimation. Great for rare events.</p>
-      <div class="tool-meta">
-        <span class="difficulty">★★☆</span>
-        <span class="type">Direct</span>
-      </div>
-      <a href="#" class="tool-link">Learn More →</a>
-    </div>
+    {% endfor %}
   </div>
-</div>
+</section>
 
-<div class="tools-category">
-  <h2>Markov Chain Monte Carlo (MCMC)</h2>
+<!-- MCMC Methods Section -->
+<section class="tools-section">
+  <h2>🔄 Markov Chain Monte Carlo</h2>
+  <p class="section-description">Powerful methods for sampling from complex, high-dimensional distributions</p>
+  
   <div class="tools-grid">
-    <div class="tool-card">
-      <h3>🔄 Metropolis-Hastings</h3>
-      <p>The classic MCMC algorithm. The workhorse of Bayesian inference.</p>
-      <div class="tool-meta">
-        <span class="difficulty">★★☆</span>
-        <span class="type">MCMC</span>
+    {% for tool in mcmc_tools %}
+    <div class="tool-card" data-aos="fade-up" data-aos-delay="{{ forloop.index | times: 50 }}">
+      <div class="tool-card-header">
+        <span class="tool-icon">{{ tool.icon }}</span>
+        <span class="tool-difficulty">{{ tool.difficulty }}</span>
       </div>
-      <a href="#" class="tool-link">Learn More →</a>
-    </div>
-    
-    <div class="tool-card">
-      <h3>🔄 Gibbs Sampling</h3>
-      <p>Coordinate-wise MCMC. Perfect when conditionals are known.</p>
-      <div class="tool-meta">
-        <span class="difficulty">★★★</span>
-        <span class="type">MCMC</span>
+      <h3>{{ tool.title }}</h3>
+      <p>{{ tool.description }}</p>
+      <div class="tool-card-footer">
+        <span class="tool-type">{{ tool.type }}</span>
+        <a href="{{ site.baseurl }}{{ tool.url }}" class="tool-link">
+          Learn More <i class="fas fa-arrow-right"></i>
+        </a>
       </div>
-      <a href="#" class="tool-link">Learn More →</a>
     </div>
-    
-    <div class="tool-card">
-      <h3>⚡ Hamiltonian MC</h3>
-      <p>Gradient-based efficient sampling for high dimensions.</p>
-      <div class="tool-meta">
-        <span class="difficulty">★★★</span>
-        <span class="type">MCMC</span>
-      </div>
-      <a href="#" class="tool-link">Learn More →</a>
-    </div>
+    {% endfor %}
   </div>
-</div>
+</section>
 
-<div class="tools-category">
-  <h2>Advanced Methods</h2>
+<!-- Advanced Methods Section -->
+<section class="tools-section">
+  <h2>🚀 Advanced Methods</h2>
+  <p class="section-description">State-of-the-art sampling algorithms for challenging problems</p>
+  
   <div class="tools-grid">
-    <div class="tool-card">
-      <h3>🍰 Slice Sampling</h3>
-      <p>Adaptive MCMC that requires no tuning parameters.</p>
-      <div class="tool-meta">
-        <span class="difficulty">★★★</span>
-        <span class="type">MCMC</span>
+    {% for tool in advanced_tools %}
+    <div class="tool-card" data-aos="fade-up" data-aos-delay="{{ forloop.index | times: 50 }}">
+      <div class="tool-card-header">
+        <span class="tool-icon">{{ tool.icon }}</span>
+        <span class="tool-difficulty">{{ tool.difficulty }}</span>
       </div>
-      <a href="#" class="tool-link">Learn More →</a>
-    </div>
-    
-    <div class="tool-card">
-      <h3>🌡️ Parallel Tempering</h3>
-      <p>Better mixing for multimodal distributions using temperature swaps.</p>
-      <div class="tool-meta">
-        <span class="difficulty">★★★★</span>
-        <span class="type">MCMC</span>
+      <h3>{{ tool.title }}</h3>
+      <p>{{ tool.description }}</p>
+      <div class="tool-card-footer">
+        <span class="tool-type">{{ tool.type }}</span>
+        <a href="{{ site.baseurl }}{{ tool.url }}" class="tool-link">
+          Learn More <i class="fas fa-arrow-right"></i>
+        </a>
       </div>
-      <a href="#" class="tool-link">Learn More →</a>
     </div>
-    
-    <div class="tool-card">
-      <h3>🔮 Sequential Monte Carlo</h3>
-      <p>Particle filtering for time series and dynamic systems.</p>
-      <div class="tool-meta">
-        <span class="difficulty">★★★★</span>
-        <span class="type">SMC</span>
-      </div>
-      <a href="#" class="tool-link">Learn More →</a>
-    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- Stats Section -->
+<div class="tools-stats">
+  <div class="stat-card">
+    <span class="stat-number">{{ site.tools | size }}</span>
+    <span class="stat-label">Total Algorithms</span>
+  </div>
+  <div class="stat-card">
+    <span class="stat-number">{{ basic_tools | size }}</span>
+    <span class="stat-label">Basic Methods</span>
+  </div>
+  <div class="stat-card">
+    <span class="stat-number">{{ mcmc_tools | size }}</span>
+    <span class="stat-label">MCMC Methods</span>
+  </div>
+  <div class="stat-card">
+    <span class="stat-number">{{ advanced_tools | size }}</span>
+    <span class="stat-label">Advanced Methods</span>
   </div>
 </div>
 
 <style>
-/* Add the styles - combining previous styles with new ones */
-.tools-category {
+.tools-hero {
+  text-align: center;
   margin: 3rem 0;
+  padding: 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 10px;
+  color: white;
 }
 
-.tools-category h2 {
+.tools-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.tools-hero p {
+  font-size: 1.2rem;
+  opacity: 0.95;
+}
+
+.tools-section {
+  margin: 4rem 0;
+}
+
+.tools-section h2 {
   color: #333;
-  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
   padding-bottom: 0.5rem;
-  border-bottom: 2px solid #667eea;
+  border-bottom: 3px solid #667eea;
+  display: inline-block;
+}
+
+.section-description {
+  color: #666;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
 }
 
 .tools-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
+  margin: 2rem 0;
 }
 
 .tool-card {
   background: white;
-  padding: 1.5rem;
   border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  border: 1px solid #f0f0f0;
+  position: relative;
+  overflow: hidden;
+}
+
+.tool-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  transform: scaleX(0);
   transition: transform 0.3s ease;
 }
 
 .tool-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+  box-shadow: 0 8px 15px rgba(102, 126, 234, 0.2);
+}
+
+.tool-card:hover::before {
+  transform: scaleX(1);
+}
+
+.tool-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.tool-icon {
+  font-size: 2rem;
+}
+
+.tool-difficulty {
+  background: #f0f0f0;
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: #666;
 }
 
 .tool-card h3 {
-  color: #667eea;
-  margin-bottom: 1rem;
+  color: #333;
+  margin-bottom: 0.8rem;
+  font-size: 1.3rem;
 }
 
 .tool-card p {
   color: #666;
   margin-bottom: 1.5rem;
   line-height: 1.6;
+  font-size: 0.95rem;
 }
 
-.tool-meta {
+.tool-card-footer {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 1.5rem;
-  padding-top: 1rem;
-  border-top: 1px solid #f0f0f0;
+  align-items: center;
+  margin-top: auto;
 }
 
-.difficulty {
-  color: #999;
-  font-size: 0.9rem;
-}
-
-.type {
-  background: #f0f0f0;
-  padding: 0.2rem 1rem;
-  border-radius: 15px;
+.tool-type {
+  background: #667eea;
+  color: white;
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
   font-size: 0.8rem;
-  color: #666;
 }
 
 .tool-link {
   color: #667eea;
   text-decoration: none;
   font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: gap 0.3s ease;
 }
 
-.active {
+.tool-link:hover {
+  gap: 0.5rem;
+  color: #764ba2;
+}
+
+.tools-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+  margin: 3rem 0;
+  padding: 2rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.stat-card {
+  text-align: center;
+  padding: 1rem;
+}
+
+.stat-number {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: bold;
   color: #667eea;
-  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.stat-label {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .tools-hero h1 {
+    font-size: 2rem;
+  }
+  
+  .tools-section h2 {
+    font-size: 1.5rem;
+  }
+  
+  .tools-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .tools-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tool-card {
+  animation: fadeInUp 0.5s ease-out forwards;
 }
 </style>
+
+<!-- Add AOS animation library (optional) -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,
+    once: true
+  });
+</script>

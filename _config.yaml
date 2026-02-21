@@ -35,7 +35,7 @@ defaults:
     values:
       layout: "default"
 
-# Add this to your _config.yml
+# start configuration
 collections:
   start:
     output: true
@@ -44,20 +44,23 @@ collections:
     output: true
     permalink: /:collection/:name
 
-# Defaults for the new collection
 defaults:
+  - scope:
+      path: ""
+      type: "tools"
+    values:
+      layout: "tool"
+      author: "Joel & Charlesquin"
   - scope:
       path: ""
       type: "start"
     values:
       layout: "start-tutorial"
-      author: "Joel & Charlesquin"
   - scope:
       path: ""
       type: "posts"
     values:
       layout: "post"
-      author: "Joel & Charlesquin"
   - scope:
       path: ""
     values:
