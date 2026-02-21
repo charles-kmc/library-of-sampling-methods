@@ -43,6 +43,9 @@ collections:
   tutorials:
     output: true
     permalink: /:collection/:name
+  tools:
+    output: true
+    permalink: /tools/:path/
 
 defaults:
   - scope:
