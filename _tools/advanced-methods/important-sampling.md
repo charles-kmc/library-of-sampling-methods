@@ -2,7 +2,7 @@
 title: "Importance Sampling"
 description: "Weighted samples for expectation estimation. Great for rare events."
 difficulty: "★★☆"
-type: "Basic Method"
+type: "Advanced Method"
 icon: "⚖️"
 category: "basic"
 order: 3
