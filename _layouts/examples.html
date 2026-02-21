@@ -1,0 +1,292 @@
+---
+layout: default
+---
+<article class="example-page">
+  <header class="example-header">
+    <div class="example-icon">{{ page.icon }}</div>
+    <h1>{{ page.title }}</h1>
+    <div class="example-meta">
+      <span class="example-difficulty">{{ page.difficulty }}</span>
+      <span class="example-category">{{ page.category | capitalize }}</span>
+    </div>
+    <p class="example-description">{{ page.description }}</p>
+    
+    <!-- Tags -->
+    <div class="example-tags">
+      {% for tag in page.tags %}
+      <span class="tag">{{ tag }}</span>
+      {% endfor %}
+    </div>
+    
+    <!-- Action Buttons -->
+    <div class="example-actions">
+      {% if page.github %}
+      <a href="{{ page.github }}" class="action-button github" target="_blank">
+        <i class="fab fa-github"></i> View on GitHub
+      </a>
+      {% endif %}
+      {% if page.colab %}
+      <a href="{{ page.colab }}" class="action-button colab" target="_blank">
+        <i class="fas fa-cloud"></i> Run in Colab
+      </a>
+      {% endif %}
+    </div>
+  </header>
+  
+  <div class="example-content">
+    {{ content }}
+  </div>
+  
+  <!-- Related Examples -->
+  <div class="related-examples">
+    <h3>📚 More {{ page.category | capitalize }} Examples</h3>
+    {% assign category = page.category %}
+    {% assign examples = site.examples | where: "category", category | sort: "order" %}
+    <div class="related-grid">
+      {% for example in examples %}
+        {% if example.url != page.url %}
+        <a href="{{ site.baseurl }}{{ example.url }}" class="related-card">
+          <span class="related-icon">{{ example.icon }}</span>
+          <h4>{{ example.title }}</h4>
+          <p>{{ example.description | truncate: 80 }}</p>
+        </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+  
+  <div class="example-navigation">
+    <a href="{{ site.baseurl }}/examples" class="back-to-examples">
+      <i class="fas fa-arrow-left"></i> Back to Examples
+    </a>
+  </div>
+</article>
+
+<style>
+.example-page {
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.example-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.example-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.example-header h1 {
+  color: #333;
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.example-meta {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.example-difficulty {
+  background: #f0f0f0;
+  padding: 0.3rem 1.5rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.example-category {
+  background: #667eea;
+  color: white;
+  padding: 0.3rem 1.5rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+.example-description {
+  color: #666;
+  font-size: 1.1rem;
+  font-style: italic;
+  max-width: 700px;
+  margin: 0 auto 1rem;
+}
+
+.example-tags {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.tag {
+  background: #f0f0f0;
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.example-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.action-button {
+  padding: 0.8rem 2rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.action-button.github {
+  background: #24292e;
+  color: white;
+}
+
+.action-button.github:hover {
+  background: #000;
+  transform: translateY(-2px);
+}
+
+.action-button.colab {
+  background: #f9ab00;
+  color: #333;
+}
+
+.action-button.colab:hover {
+  background: #fbbc04;
+  transform: translateY(-2px);
+}
+
+.example-content {
+  line-height: 1.8;
+  color: #333;
+}
+
+.example-content h2 {
+  color: #333;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #667eea;
+}
+
+.example-content h3 {
+  color: #444;
+  margin-top: 2rem;
+}
+
+.example-content pre {
+  background: #1e1e1e;
+  color: #d4d4d4;
+  padding: 1.5rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+
+.example-content code {
+  font-family: 'Fira Code', monospace;
+}
+
+.related-examples {
+  margin: 3rem 0;
+  padding: 2rem 0;
+  border-top: 1px solid #f0f0f0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.related-examples h3 {
+  color: #333;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.related-card {
+  text-decoration: none;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.related-card:hover {
+  background: white;
+  border-color: #667eea;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(102, 126, 234, 0.1);
+}
+
+.related-icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.related-card h4 {
+  color: #333;
+  margin-bottom: 0.3rem;
+  font-size: 1rem;
+}
+
+.related-card p {
+  color: #666;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.example-navigation {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.back-to-examples {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background: #f0f4ff;
+  color: #667eea;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.back-to-examples:hover {
+  background: #667eea;
+  color: white;
+  transform: translateX(-5px);
+}
+
+@media (max-width: 768px) {
+  .example-actions {
+    flex-direction: column;
+  }
+  
+  .related-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>

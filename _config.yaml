@@ -46,6 +46,9 @@ collections:
   tools:
     output: true
     permalink: /tools/:path/
+  examples:
+    output: true
+    permalink:/examples/:path
 
 defaults:
   - scope:
@@ -64,6 +67,11 @@ defaults:
       type: "posts"
     values:
       layout: "post"
+    scope:
+      path: ""
+      type: "examples"
+    values:
+      layout: "example"
   - scope:
       path: ""
     values:
