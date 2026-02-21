@@ -4,7 +4,7 @@ description: "Weighted samples for expectation estimation. Great for rare events
 difficulty: "★★☆"
 type: "Advanced Method"
 icon: "⚖️"
-category: "basic"
+category: "advanced"
 order: 3
 ---
 
