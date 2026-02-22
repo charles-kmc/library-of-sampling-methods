@@ -3,13 +3,14 @@ layout: default
 title: Home
 ---
 <!-- <div class="welcome-section" style="background-image: url('{{ site.baseurl }}/assets/images/background.png');"> -->
-<div class="welcome-section" style="background-image: url('{{ site.baseurl }}/assets/images/logo.jpg');">
+<div class="welcome-section" style="background-image: url('{{ site.baseurl }}/assets/images/logo2.jpg');">
   <div class="welcome-overlay">
     <div class="container">
       <h2>Welcome to the Sampling Algorithms Lab</h2>
       <p>We develop and study sampling methods for machine learning, Bayesian inference, and computational science.</p>
     </div>
-  </div><br>
+  </div>
+  
   <div class="quick-links">
     <a href="{{ site.baseurl }}/start" class="quick-link">
       <span class="quick-icon">🚀</span>
@@ -35,7 +36,7 @@ title: Home
 <div class="latest-tutorials">
   <h2>📖 Latest Tutorials</h2>
   <div class="tutorial-preview">
-    {% for post in site.posts limit:2 %}
+    {% for post in site.posts limit:5 %}
     <div class="preview-card">
       <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
       <p class="post-meta">{{ post.date | date: "%B %d, %Y" }}</p>
@@ -52,7 +53,7 @@ title: Home
 .welcome-section {
   text-align: center;
   width: 100%;
-  margin: -1px 0 0 0;   /* top=0, right=0, bottom=4rem, left=0 */
+  margin: -5px 0 0 0;   /* top=0, right=0, bottom=4rem, left=0 */
 }
 
 .welcome-section h2 {
@@ -67,13 +68,7 @@ title: Home
   margin-bottom: 2rem;
 }
 
-/* .quick-links {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-  align-items: center;
-} */
+
 .quick-links {
   display: block;      /* ensure it starts on a new line */
   margin-top: 20px;    /* optional: space from above content */
