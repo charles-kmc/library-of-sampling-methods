@@ -16,7 +16,33 @@ layout: default
     {{ content }}
   </div>
   
+
+  <!-- Navigation between start tools -->
   <div class="tool-navigation">
+    {% assign tools = site.tools | where: "category", category | sort: "order" %}
+    {% for tool in tools %}
+      {% if tool.url == page.url %}
+        {% unless forloop.first %}
+          {% assign prev_index = forloop.index0 | minus: 1 %}
+          {% assign prev_tool = tools[prev_index] %}
+          <a href="{{ site.baseurl }}{{ prev_tool.url }}" class="prev-tool">
+            ← {{ prev_tool.title }}
+          </a>
+        {% endunless %}
+        
+        {% unless forloop.last %}
+          {% assign next_index = forloop.index0 | plus: 1 %}
+          {% assign next_tool = tools[next_index] %}
+          <a href="{{ site.baseurl }}{{ next_tool.url }}" class="next-tool">
+            {{ next_tool.title }} →
+          </a>
+        {% endunless %}
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  
+  <!-- <div class="tool-navigation">
     <a href="{{ site.baseurl }}/sampling-tools" class="back-to-tools">
       <i class="fas fa-arrow-left"></i> Back to Tools
     </a>
@@ -37,7 +63,7 @@ layout: default
         {% endfor %}
       </ul>
     </div>
-  </div>
+  </div> -->
 </article>
 
 <style>
