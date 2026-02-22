@@ -74,7 +74,8 @@ title: Home
   align-items: center;
 } */
 .quick-links {
-  display: flex;        /* Align links in a row */
+  display: block;      /* ensure it starts on a new line */
+  margin-top: 20px;    /* optional: space from above content */
   gap: 20px;            /* Space between each link */
   flex-wrap: nowrap;    /* Prevent links from breaking to a new line */
   align-items: center;  /* Vertically center icons and text */
@@ -92,15 +93,15 @@ title: Home
 
 .quick-link {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  gap: 8px;
+  padding: 10px 15px;
+  background: rgba(0,0,0,0.5);
+  border-radius: 8px;
   text-decoration: none;
-  color: #333;
-  padding: 1.5rem;
-  border-radius: 10px;
-  background: #f8f9fa;
-  transition: all 0.3s ease;
-  min-width: 150px;
+  color: white;
+  font-weight: bold;
+  transition: background 0.3s;
 }
 
 .quick-link:hover {
