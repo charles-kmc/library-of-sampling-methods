@@ -94,41 +94,6 @@ title: Home
   margin-bottom: 2rem;
 }
 
-.math-header {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  padding: 2rem;
-  border-radius: 10px;
-  margin: 2rem auto;
-  max-width: 800px;
-  text-align: center;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-}
-
-.math-content {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-.math-text {
-  font-weight: 300;
-  margin-right: 0.5rem;
-}
-
-.math-variables {
-  font-weight: 600;
-  background: rgba(255,255,255,0.2);
-  padding: 0.2rem 1rem;
-  border-radius: 50px;
-  display: inline-block;
-}
-
-.math-equation {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-top: 0.5rem;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-}
 
 .welcome-section {
   text-align: center;
@@ -137,12 +102,12 @@ title: Home
 
 .welcome-section h2 {
   font-size: 2rem;
-  color: #333;
+  color: #fcfcfc;
   margin-bottom: 1rem;
 }
 
 .welcome-section p {
-  color: #666;
+  color: #fcfcfc;
   font-size: 1.2rem;
   margin-bottom: 2rem;
 }
