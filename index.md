@@ -3,8 +3,8 @@ layout: default
 title: Home
 ---
 <!-- <div class="welcome-section" style="background-image: url('{{ site.baseurl }}/assets/images/background.png');"> -->
-<!-- <div class="welcome-section" style="background-image: url('{{ site.baseurl }}/assets/images/logo2.jpg');"> -->
-<div class="welcome-section" id="welcome-section">
+<div class="welcome-section" style="background-image: url('{{ site.baseurl }}/assets/images/logo1.jpg');">
+<!-- <div class="welcome-section" id="welcome-section"> -->
   <div class="welcome-overlay">
     <div class="container">
       <h2>Welcome to the Sampling Algorithms Lab</h2>
@@ -165,7 +165,7 @@ title: Home
 }
 </style>
 
-<script>
+<!-- <script>
   const welcomeSection = document.getElementById('welcome-section');
 
   const backgrounds = [
@@ -184,4 +184,4 @@ title: Home
     current = (current + 1) % backgrounds.length;
     welcomeSection.style.backgroundImage = `url('${backgrounds[current]}')`;
   }, 60000);
-</script>
+</script> -->
