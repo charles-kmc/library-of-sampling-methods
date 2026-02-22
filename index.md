@@ -49,15 +49,19 @@ title: Home
 
 <!-- Add the CSS styles (same as before) -->
 <style>
+/* Remove default browser spacing */
+body {
+  margin: 0;
+  padding: 0;
+}
+
 /* Welcome section flush with navbar */
 .welcome-section {
   text-align: center;
   width: 100%;
   margin: 0;           /* no margin above/below */
-  padding-top: 0;   
+  padding-top: 20px;   /* optional internal spacing */
   padding-bottom: 50px;
-  border-radius: 20px; 
-  overflow: hidden;
 }
 
 /* Headings inside welcome section */
@@ -75,13 +79,14 @@ title: Home
   margin-bottom: 2rem;
 }
 
+/* Quick links row */
 .quick-links {
-  display: flex;
-  flex-direction: column;  /* stack links vertically */
-  justify-content: center; /* center the whole column vertically if needed */
-  align-items: center;     /* center links horizontally */
-  gap: 20px;               /* space between each link */
-  margin-top: 20px;
+  display: flex;           /* horizontal row */
+  justify-content: center; /* center links */
+  gap: 20px;               /* space between links */
+  flex-wrap: nowrap;       /* prevent wrapping */
+  margin-top: 20px;        /* spacing below welcome text */
+  align-items: center;
 }
 
 /* Individual quick links */
