@@ -53,7 +53,8 @@ title: Home
 .welcome-section {
   text-align: center;
   width: 100%;
-  margin: -5px 0 0 0;   /* top=0, right=0, bottom=4rem, left=0 */
+  margin: 0;   /* top=0, right=0, bottom=4rem, left=0 */
+  padding-top: 50px;
 }
 
 .welcome-section h2 {
@@ -71,7 +72,7 @@ title: Home
 
 .quick-links {
   display: block;      /* ensure it starts on a new line */
-  margin-top: 20px;    /* optional: space from above content */
+  margin-top: 0;    /* optional: space from above content */
   gap: 20px;            /* Space between each link */
   flex-wrap: nowrap;    /* Prevent links from breaking to a new line */
   align-items: center;  /* Vertically center icons and text */
@@ -160,7 +161,7 @@ title: Home
   font-weight: 500;
 }
 
-@media (max-width: 100%) {
+@media (max-width: 768px) {
   
   .quick-links {
     gap: 1rem;

@@ -128,57 +128,6 @@ body {
   }
 }
 
-/* Utility classes */
-.text-center {
-  text-align: center;
-}
-
-.mt-4 {
-  margin-top: 2rem;
-}
-
-.mb-4 {
-  margin-bottom: 2rem;
-}
-
-/* Beautiful scrollbar */
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
-}
-
-
-
-.cintainer {
-  color: white;
-}
-.welcome-section {
-  position: relative;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed; /* Creates parallax effect - optional */
-  min-height: 400px;
-  display: flex;
-  align-items: center;
-  margin: 3rem 0;
-  border-radius: 10px;
-  overflow: hidden;
-  /* box-shadow: 0 10px 30px rgba(0,0,0,0.2); */
-}
-
 /* Full-width navbar */
 .top-nav {
   width: 100%;                  /* full width */
