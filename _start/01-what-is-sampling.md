@@ -10,6 +10,7 @@ icon: "🎯"
 Sampling is the process of selecting a subset of individuals from a population to estimate characteristics of the whole population.
 
 ## Key Concepts
+
 - Population vs Sample
 - Random Sampling
 - Bias and Variance
