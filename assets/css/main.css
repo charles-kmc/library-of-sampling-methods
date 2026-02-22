@@ -297,7 +297,7 @@ body {
   display: flex;
   align-items: center;
   gap: 1rem; /* space between links */
-  margin-left: 5rem;
+  margin-left: 10rem;
 }
 
 /* Individual links */
