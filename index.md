@@ -54,7 +54,9 @@ title: Home
 .welcome-section {
   text-align: center;
   width: 100%;
-  margin: 0;     
+  margin: 0;  
+  margin-left: 50px;   
+  margin-right: 50px;   
   padding-top: 0;   
   padding-bottom: 50px;
   border-radius: 20px; 
