@@ -187,7 +187,7 @@ body {
     "{{ site.baseurl }}/assets/images/logo.jpg",
     "{{ site.baseurl }}/assets/images/logo1.jpg",
     "{{ site.baseurl }}/assets/images/logo2.jpg",
-    "{{ site.baseurl }}/assets/images/background.pjg"
+    "{{ site.baseurl }}/assets/images/background.png"
   ];
 
   let current = 0;
