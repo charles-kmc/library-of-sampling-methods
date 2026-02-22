@@ -97,7 +97,8 @@ title: Home
 
 .welcome-section {
   text-align: center;
-  margin: 4rem 0;
+  width: 100%;
+  margin: 0 0 4rem 0;   /* top=0, right=0, bottom=4rem, left=0 */
 }
 
 .welcome-section h2 {
