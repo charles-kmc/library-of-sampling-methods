@@ -297,6 +297,7 @@ body {
   display: flex;
   align-items: center;
   gap: 1rem; /* space between links */
+  margin-left: 5rem;
 }
 
 /* Individual links */
@@ -323,6 +324,7 @@ body {
   }
 
   .nav-container {
+    margin-left: 0;
     flex-direction: column;
     width: 100%;
     gap: 0.5rem;
