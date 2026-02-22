@@ -7,7 +7,7 @@ title: Home
 <div class="welcome-section" id="welcome-section">
   <div class="welcome-overlay">
     <div class="container">
-      <h2>Welcome to the Sampling Algorithms Lab</h2>
+      <h2>Welcome to the Vision Maths Lab</h2>
       <p>We develop and study sampling methods for machine learning, Bayesian inference, and computational science.</p>
     </div>
   </div>
