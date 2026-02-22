@@ -47,53 +47,6 @@ title: Home
 
 <!-- Add the CSS styles (same as before) -->
 <style>
-/* Copy all the styles from the previous message */
-.top-nav {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  padding: 1.5rem;
-  background: white;
-  border-bottom: 2px solid #f0f0f0;
-  margin-bottom: 2rem;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.nav-link {
-  color: #333;
-  text-decoration: none;
-  font-size: 1.1rem;
-  font-weight: 500;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  transition: all 0.3s ease;
-}
-
-.nav-link:hover {
-  color: #667eea;
-  background: #f8f9fa;
-}
-
-.hero-section {
-  text-align: center;
-  margin-bottom: 3rem;
-}
-
-.hero-section h1 {
-  font-size: 2.5rem;
-  color: #333;
-  margin-bottom: 0.5rem;
-}
-
-.subtitle {
-  font-size: 1.2rem;
-  color: #666;
-  margin-bottom: 2rem;
-}
-
 
 .welcome-section {
   text-align: center;
@@ -113,11 +66,28 @@ title: Home
   margin-bottom: 2rem;
 }
 
-.quick-links {
+/* .quick-links {
   display: flex;
   justify-content: center;
   gap: 2rem;
   flex-wrap: wrap;
+  align-items: center;
+} */
+.quick-links {
+  display: flex;        /* Align links in a row */
+  gap: 20px;            /* Space between each link */
+  flex-wrap: nowrap;    /* Prevent links from breaking to a new line */
+  align-items: center;  /* Vertically center icons and text */
+}
+.quick-links .quick-link {
+  display: flex;        /* Keep icon + text in a row */
+  align-items: center;  /* Vertically center the icon and text */
+  text-decoration: none;
+  font-weight: 500;
+  color: inherit;
+}
+.quick-links .quick-icon {
+  margin-right: 5px;    /* Space between emoji/icon and text */
 }
 
 .quick-link {
@@ -194,11 +164,6 @@ title: Home
 }
 
 @media (max-width: 768px) {
-  .top-nav {
-    gap: 1rem;
-    padding: 1rem;
-    flex-wrap: wrap;
-  }
   
   .quick-links {
     gap: 1rem;
