@@ -25,7 +25,7 @@ body {
   justify-content: center;
   gap: 2rem;
   padding: 1rem 0;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #667eea 0%, #67646b 100%);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -84,7 +84,7 @@ body {
 
 /* Footer with matching gradient */
 .site-footer {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #667eea 0%, #363536 100%);
   color: white;
   padding: 2rem 0;
   margin-top: 4rem;

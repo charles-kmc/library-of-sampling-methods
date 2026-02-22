@@ -3,7 +3,8 @@ layout: default
 title: Home
 ---
 <!-- <div class="welcome-section" style="background-image: url('{{ site.baseurl }}/assets/images/background.png');"> -->
-<div class="welcome-section" style="background-image: url('{{ site.baseurl }}/assets/images/logo2.jpg');">
+<!-- <div class="welcome-section" style="background-image: url('{{ site.baseurl }}/assets/images/logo2.jpg');"> -->
+<div class="welcome-section" id="welcome-section">
   <div class="welcome-overlay">
     <div class="container">
       <h2>Welcome to the Sampling Algorithms Lab</h2>
@@ -59,8 +60,8 @@ body {
 .welcome-section {
   text-align: center;
   width: 100%;
-  margin: 0;           /* no margin above/below */
-  padding-top: 20px;   /* optional internal spacing */
+  margin: 0;           
+  padding-top: 20px;   
   padding-bottom: 50px;
 }
 
@@ -68,7 +69,7 @@ body {
 .welcome-section h2 {
   font-size: 2rem;
   color: #fcfcfc;
-  margin-top: 0;       /* remove extra top margin */
+  margin-top: 0;       
   margin-bottom: 1rem;
 }
 
@@ -81,11 +82,11 @@ body {
 
 /* Quick links row */
 .quick-links {
-  display: flex;           /* horizontal row */
-  justify-content: center; /* center links */
-  gap: 20px;               /* space between links */
-  flex-wrap: nowrap;       /* prevent wrapping */
-  margin-top: 20px;        /* spacing below welcome text */
+  display: flex;           
+  justify-content: center; 
+  gap: 20px;               
+  flex-wrap: nowrap;      
+  margin-top: 60px;        /
   align-items: center;
 }
 
@@ -171,10 +172,32 @@ body {
   .quick-links {
     gap: 1rem;
   }
-
   .quick-link {
     min-width: 120px;
     padding: 1rem;
   }
 }
 </style>
+
+<!-- Javascript -->
+<script>
+  const welcomeSection = document.getElementById('welcome-section');
+
+  const backgrounds = [
+    "{{ site.baseurl }}/assets/images/logo.jpg",
+    "{{ site.baseurl }}/assets/images/logo1.jpg",
+    "{{ site.baseurl }}/assets/images/logo2.jpg",
+    "{{ site.baseurl }}/assets/images/background.pjg"
+  ];
+
+  let current = 0;
+
+  // Set initial background
+  welcomeSection.style.backgroundImage = `url('${backgrounds[current]}')`;
+
+  // Change background every 1 minute
+  setInterval(() => {
+    current = (current + 1) % backgrounds.length;
+    welcomeSection.style.backgroundImage = `url('${backgrounds[current]}')`;
+  }, 5000);
+</script>
