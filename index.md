@@ -29,6 +29,16 @@ title: Home
   </div>
 </div>
 
+<div class="welcome-section" style="background-image: url('{{ site.baseurl }}/assets/images/background.png');">
+  <div class="welcome-overlay">
+    <div class="container">
+      <h2>Welcome to the Sampling Algorithms Lab</h2>
+      <p>We develop and study sampling methods for machine learning, Bayesian inference, and computational science.</p>
+      <a href="{{ site.baseurl }}/about" class="welcome-button">Learn More About Us</a>
+    </div>
+  </div>
+</div>
+
 <!-- Welcome Section -->
 <div class="welcome-section">
   <h2>Welcome to the Library of Sampling Methods</h2>
