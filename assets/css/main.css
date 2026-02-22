@@ -179,99 +179,6 @@ body {
   /* box-shadow: 0 10px 30px rgba(0,0,0,0.2); */
 }
 
-/* Dark overlay to make text readable */
-.welcome-overlay {
-  width: 100%;
-  height: 100%;
-  /* background: linear-gradient(135deg, rgba(52, 152, 219, 0.85) 0%, rgba(102, 126, 234, 0.85) 100%); */
-  padding: 4rem 0;
-  backdrop-filter: blur(2px); /* Slight blur effect on background */
-}
-
-.welcome-overlay .container {
-  text-align: center;
-  color: white;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.welcome-overlay h2 {
-  font-size: 2.5rem;
-  font-weight: bold;   /* or 700 */
-  margin-bottom: 1.5rem;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
-  letter-spacing: -0.5px;
-  color: white;
-}
-
-.welcome-overlay p {
-  font-size: 1.2rem;
-  line-height: 1.8;
-  margin-bottom: 2rem;
-  opacity: 0.95;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
-}
-
-
-/* Different overlay variations you can use */
-
-/* Option 1: Dark overlay */
-/* .welcome-overlay.dark {
-  background: rgba(0, 0, 0, 0.7);
-} */
-
-/* Option 2: Gradient overlay (current) */
-/* .welcome-overlay.gradient {
-  background: linear-gradient(135deg, rgba(52, 152, 219, 0.9) 0%, rgba(102, 126, 234, 0.9) 100%);
-} */
-
-/* Option 3: Semi-transparent color */
-/* .welcome-overlay.solid {
-  background: rgba(52, 152, 219, 0.85);
-} */
-
-/* Responsive */
-@media (max-width: 768px) {
-  .welcome-section {
-    min-height: 300px;
-    background-attachment: scroll; /* Disable parallax on mobile */
-  }
-  
-  .welcome-overlay {
-    padding: 3rem 1rem;
-  }
-  
-  .welcome-overlay h2 {
-    font-size: 1.8rem;
-  }
-  
-  .welcome-overlay p {
-    font-size: 1rem;
-  }
-  
-  .welcome-button {
-    padding: 0.8rem 2rem;
-    font-size: 1rem;
-  }
-}
-
-/* Optional: Add a subtle animation when section comes into view */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.welcome-overlay .container {
-  animation: fadeInUp 1s ease-out;
-}
-
-
 /* Full-width navbar */
 .top-nav {
   width: 100%;                  /* full width */
@@ -290,7 +197,7 @@ body {
 .top-nav .logo img {
   height: 40px;
   width: auto;
-    margin-left: 8rem;
+  margin-left: 8rem;
 }
 
 /* Nav links container */

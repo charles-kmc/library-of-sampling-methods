@@ -10,7 +10,7 @@ title: Home
       <p>We develop and study sampling methods for machine learning, Bayesian inference, and computational science.</p>
     </div>
   </div>
-  
+
   <div class="quick-links">
     <a href="{{ site.baseurl }}/start" class="quick-link">
       <span class="quick-icon">🚀</span>
@@ -160,7 +160,7 @@ title: Home
   font-weight: 500;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 100%) {
   
   .quick-links {
     gap: 1rem;
