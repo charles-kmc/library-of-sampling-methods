@@ -3,7 +3,8 @@ layout: default
 title: Home
 ---
 <!-- <div class="welcome-section" style="background-image: url('{{ site.baseurl }}/assets/images/background.png');"> -->
-<div class="welcome-section" style="background-image: url('{{ site.baseurl }}/assets/images/logo2.jpg');">
+<!-- <div class="welcome-section" style="background-image: url('{{ site.baseurl }}/assets/images/logo2.jpg');"> -->
+<div class="welcome-section" id="welcome-section">
   <div class="welcome-overlay">
     <div class="container">
       <h2>Welcome to the Sampling Algorithms Lab</h2>
@@ -58,6 +59,9 @@ title: Home
   padding-bottom: 50px;
   border-radius: 20px; 
   overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 1s ease-in-out;
 }
 
 /* Headings inside welcome section */
@@ -174,3 +178,24 @@ title: Home
   }
 }
 </style>
+
+<script>
+  const welcomeSection = document.getElementById('welcome-section');
+
+  const backgrounds = [
+    "{{ site.baseurl }}/assets/images/logo2.jpg",
+    "{{ site.baseurl }}/assets/images/logo.png"
+    "{{ site.baseurl }}/assets/images/logo1.png"
+  ];
+
+  let current = 0;
+
+  // Set initial background
+  welcomeSection.style.backgroundImage = `url('${backgrounds[current]}')`;
+
+  // Change background every 1 minute
+  setInterval(() => {
+    current = (current + 1) % backgrounds.length;
+    welcomeSection.style.backgroundImage = `url('${backgrounds[current]}')`;
+  }, 60000);
+</script>
