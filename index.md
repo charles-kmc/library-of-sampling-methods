@@ -2,18 +2,6 @@
 layout: default
 title: Home
 ---
-
-<!-- Navigation Bar -->
-<!-- <div class="top-nav">
-  <a href="{{ site.baseurl }}/" class="nav-link">Home</a>
-  <a href="{{ site.baseurl }}/start" class="nav-link">Start</a>
-  <a href="{{ site.baseurl }}/sampling-tools" class="nav-link">Sampling tools</a>
-  <a href="{{ site.baseurl }}/examples" class="nav-link">Examples</a>
-  <a href="{{ site.baseurl }}/projects" class="nav-link">Projects</a>
-</div> -->
-
-
-
 <div class="welcome-section" style="background-image: url('{{ site.baseurl }}/assets/images/background.png');">
   <div class="welcome-overlay">
     <div class="container">
@@ -21,6 +9,24 @@ title: Home
       <p>We develop and study sampling methods for machine learning, Bayesian inference, and computational science.</p>
       <a href="{{ site.baseurl }}/about" class="welcome-button">Learn More About Us</a>
     </div>
+  </div>
+  <div class="quick-links">
+    <a href="{{ site.baseurl }}/start" class="quick-link">
+      <span class="quick-icon">🚀</span>
+      <span>Get Started</span>
+    </a>
+    <a href="{{ site.baseurl }}/sampling-tools" class="quick-link">
+      <span class="quick-icon">🔧</span>
+      <span>Sampling Tools</span>
+    </a>
+    <a href="{{ site.baseurl }}/examples" class="quick-link">
+      <span class="quick-icon">💡</span>
+      <span>Examples</span>
+    </a>
+    <a href="{{ site.baseurl }}/projects" class="quick-link">
+      <span class="quick-icon">📚</span>
+      <span>Projects</span>
+    </a>
   </div>
 </div>
 
