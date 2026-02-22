@@ -55,13 +55,12 @@ title: Home
   text-align: center;
   width: 100%;
   margin: 0;  
-  margin-left: 50px;   
-  margin-right: 50px;   
+  /* margin-left: 50px;   
+  margin-right: 50px;    */
   padding-top: 0;   
   padding-bottom: 50px;
   border-radius: 20px; 
   overflow: hidden;
-  transition: background-image 1s ease-in-out;
 }
 
 /* Headings inside welcome section */
@@ -100,7 +99,6 @@ title: Home
   text-decoration: none;
   color: white;
   font-weight: bold;
-  transition: background 0.3s, transform 0.3s;
 }
 
 .quick-link:hover {
