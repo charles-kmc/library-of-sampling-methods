@@ -12,22 +12,7 @@ title: Home
   <a href="{{ site.baseurl }}/projects" class="nav-link">Projects</a>
 </div> -->
 
-<!-- Hero Section with Math Header -->
-<div class="hero-section">
-  <h1>🎲 Sampling Algorithms</h1>
-  <p class="subtitle">A Visual Tutorial Series</p>
-  
-  <!-- Math Header from your image -->
-  <div class="math-header">
-    <div class="math-content">
-      <span class="math-text">A (resp. lower bound) to a given</span>
-      <span class="math-variables">\( t \) and \( \epsilon \)</span>
-    </div>
-    <div class="math-equation">
-      \[t + \text{error}\]
-    </div>
-  </div>
-</div>
+
 
 <div class="welcome-section" style="background-image: url('{{ site.baseurl }}/assets/images/background.png');">
   <div class="welcome-overlay">
@@ -41,9 +26,6 @@ title: Home
 
 <!-- Welcome Section -->
 <div class="welcome-section">
-  <h2>Welcome to the Library of Sampling Methods</h2>
-  <p>Explore our comprehensive collection of sampling algorithms, tutorials, and interactive examples.</p>
-  
   <div class="quick-links">
     <a href="{{ site.baseurl }}/start" class="quick-link">
       <span class="quick-icon">🚀</span>
