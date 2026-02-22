@@ -7,7 +7,6 @@ title: Home
     <div class="container">
       <h2>Welcome to the Sampling Algorithms Lab</h2>
       <p>We develop and study sampling methods for machine learning, Bayesian inference, and computational science.</p>
-      <a href="{{ site.baseurl }}/about" class="welcome-button">Learn More About Us</a>
     </div>
   </div>
   <div class="quick-links">
@@ -30,27 +29,6 @@ title: Home
   </div>
 </div>
 
-<!-- Welcome Section -->
-<div class="welcome-section">
-  <div class="quick-links">
-    <a href="{{ site.baseurl }}/start" class="quick-link">
-      <span class="quick-icon">🚀</span>
-      <span>Get Started</span>
-    </a>
-    <a href="{{ site.baseurl }}/sampling-tools" class="quick-link">
-      <span class="quick-icon">🔧</span>
-      <span>Sampling Tools</span>
-    </a>
-    <a href="{{ site.baseurl }}/examples" class="quick-link">
-      <span class="quick-icon">💡</span>
-      <span>Examples</span>
-    </a>
-    <a href="{{ site.baseurl }}/projects" class="quick-link">
-      <span class="quick-icon">📚</span>
-      <span>Projects</span>
-    </a>
-  </div>
-</div>
 
 <!-- Latest Tutorials -->
 <div class="latest-tutorials">

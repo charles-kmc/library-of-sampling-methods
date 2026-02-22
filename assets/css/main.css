@@ -232,19 +232,19 @@ body {
 /* Different overlay variations you can use */
 
 /* Option 1: Dark overlay */
-.welcome-overlay.dark {
+/* .welcome-overlay.dark {
   background: rgba(0, 0, 0, 0.7);
-}
+} */
 
 /* Option 2: Gradient overlay (current) */
-.welcome-overlay.gradient {
+/* .welcome-overlay.gradient {
   background: linear-gradient(135deg, rgba(52, 152, 219, 0.9) 0%, rgba(102, 126, 234, 0.9) 100%);
-}
+} */
 
 /* Option 3: Semi-transparent color */
-.welcome-overlay.solid {
+/* .welcome-overlay.solid {
   background: rgba(52, 152, 219, 0.85);
-}
+} */
 
 /* Responsive */
 @media (max-width: 768px) {
