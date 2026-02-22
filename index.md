@@ -96,7 +96,7 @@ title: Home
   align-items: center;
   gap: 8px;
   padding: 10px 15px;
-  background: rgba(0,0,0,0.5);
+  background: rgba(78, 75, 75, 0.5);
   border-radius: 8px;
   text-decoration: none;
   color: white;
