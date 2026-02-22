@@ -75,14 +75,13 @@ title: Home
   margin-bottom: 2rem;
 }
 
-/* Quick links row */
 .quick-links {
-  display: flex;           /* horizontal row */
-  justify-content: center; /* center links */
-  gap: 20px;               /* space between links */
-  flex-wrap: nowrap;       /* prevent wrapping */
-  margin-top: 20px;        /* spacing below welcome text */
-  align-items: center;
+  display: flex;
+  flex-direction: column;  /* stack links vertically */
+  justify-content: center; /* center the whole column vertically if needed */
+  align-items: center;     /* center links horizontally */
+  gap: 20px;               /* space between each link */
+  margin-top: 20px;
 }
 
 /* Individual quick links */
