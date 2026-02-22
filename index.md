@@ -49,19 +49,15 @@ title: Home
 
 <!-- Add the CSS styles (same as before) -->
 <style>
-/* Remove default browser spacing */
-body {
-  margin: 0;
-  padding: 0;
-}
-
 /* Welcome section flush with navbar */
 .welcome-section {
   text-align: center;
   width: 100%;
-  margin: 0;           /* no margin above/below */
-  padding-top: 20px;   /* optional internal spacing */
+  margin: 0;     
+  padding-top: 0;   
   padding-bottom: 50px;
+  border-radius: 20px; 
+  overflow: hidden;
 }
 
 /* Headings inside welcome section */
