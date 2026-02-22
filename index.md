@@ -3,8 +3,7 @@ layout: default
 title: Home
 ---
 <!-- <div class="welcome-section" style="background-image: url('{{ site.baseurl }}/assets/images/background.png');"> -->
-<div class="welcome-section" style="background-image: url('{{ site.baseurl }}/assets/images/logo1.jpg');">
-<!-- <div class="welcome-section" id="welcome-section"> -->
+<div class="welcome-section" style="background-image: url('{{ site.baseurl }}/assets/images/logo2.jpg');">
   <div class="welcome-overlay">
     <div class="container">
       <h2>Welcome to the Sampling Algorithms Lab</h2>
@@ -54,9 +53,7 @@ title: Home
 .welcome-section {
   text-align: center;
   width: 100%;
-  margin: 0;  
-  /* margin-left: 50px;   
-  margin-right: 50px;    */
+  margin: 0;           /* no margin above/below */
   padding-top: 0;   
   padding-bottom: 50px;
   border-radius: 20px; 
@@ -99,6 +96,7 @@ title: Home
   text-decoration: none;
   color: white;
   font-weight: bold;
+  transition: background 0.3s, transform 0.3s;
 }
 
 .quick-link:hover {
@@ -163,25 +161,16 @@ title: Home
   text-decoration: none;
   font-weight: 500;
 }
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .quick-links {
+    gap: 1rem;
+  }
+
+  .quick-link {
+    min-width: 120px;
+    padding: 1rem;
+  }
+}
 </style>
-
-<!-- <script>
-  const welcomeSection = document.getElementById('welcome-section');
-
-  const backgrounds = [
-    "{{ site.baseurl }}/assets/images/logo2.jpg",
-    "{{ site.baseurl }}/assets/images/logo.jpg",
-    "{{ site.baseurl }}/assets/images/logo1.jpg"
-  ];
-
-  let current = 0;
-
-  // Set initial background
-  welcomeSection.style.backgroundImage = `url('${backgrounds[current]}')`;
-
-  // Change background every 1 minute
-  setInterval(() => {
-    current = (current + 1) % backgrounds.length;
-    welcomeSection.style.backgroundImage = `url('${backgrounds[current]}')`;
-  }, 60000);
-</script> -->
