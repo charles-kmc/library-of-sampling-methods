@@ -45,7 +45,7 @@ collections:
     permalink: /:collection/:name
   tools:
     output: true
-    permalink: /tools/:path/
+    permalink: /tools/:name/
   examples:
     output: true
     permalink: /examples/:path/
