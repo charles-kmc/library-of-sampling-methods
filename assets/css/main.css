@@ -13,6 +13,12 @@ body {
   min-height: 100vh;
 }
 
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
 /* Navigation Bar - Beautiful gradient background */
 .top-nav {
   display: flex;
@@ -78,9 +84,9 @@ body {
 
 /* Footer with matching gradient */
 .site-footer {
-  background: linear-gradient(135deg, #7b819e 0%, #676668 100%);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
-  padding: 1rem 0;
+  padding: 2rem 0;
   margin-top: 4rem;
   text-align: center;
   border-top: 1px solid rgba(255,255,255,0.1);
@@ -101,6 +107,54 @@ body {
 .site-footer a:hover {
   opacity: 1;
   border-bottom: 1px solid white;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .top-nav {
+    gap: 0.5rem;
+    padding: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .nav-link {
+    font-size: 0.9rem;
+    /* padding: 0.4rem 1rem; */
+    padding: 1rem 0;
+  }
+  
+  .page-content {
+    padding: 1rem 0;
+  }
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+
+
+.cintainer {
+  color: white;
+}
+.welcome-section {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Creates parallax effect - optional */
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  margin: 3rem 0;
+  border-radius: 10px;
+  overflow: hidden;
+  /* box-shadow: 0 10px 30px rgba(0,0,0,0.2); */
 }
 
 /* Full-width navbar */
@@ -152,7 +206,6 @@ body {
   .top-nav {
     flex-direction: column;
     align-items: flex-start;
-    flex-wrap: wrap;
     padding: 1rem;
     gap: 0.5rem;
   }
@@ -166,15 +219,5 @@ body {
 
   .top-nav .nav-link {
     font-size: 0.9rem;
-  }
-  
-  .nav-link {
-    font-size: 0.9rem;
-    /* padding: 0.4rem 1rem; */
-    padding: 1rem 0;
-  }
-  
-  .page-content {
-    padding: 1rem 0;
   }
 }
