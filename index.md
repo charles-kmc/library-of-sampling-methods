@@ -8,7 +8,7 @@ title: Home
       <h2>Welcome to the Sampling Algorithms Lab</h2>
       <p>We develop and study sampling methods for machine learning, Bayesian inference, and computational science.</p>
     </div>
-  </div>
+  </div><br>
   <div class="quick-links">
     <a href="{{ site.baseurl }}/start" class="quick-link">
       <span class="quick-icon">🚀</span>

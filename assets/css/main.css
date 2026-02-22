@@ -159,7 +159,9 @@ body {
 
 
 
-
+.cintainer {
+  color: white;
+}
 .welcome-section {
   position: relative;
   background-size: cover;
@@ -172,7 +174,7 @@ body {
   margin: 3rem 0;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  /* box-shadow: 0 10px 30px rgba(0,0,0,0.2); */
 }
 
 /* Dark overlay to make text readable */
