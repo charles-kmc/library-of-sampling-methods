@@ -49,45 +49,47 @@ title: Home
 
 <!-- Add the CSS styles (same as before) -->
 <style>
+/* Remove default browser spacing */
+body {
+  margin: 0;
+  padding: 0;
+}
 
+/* Welcome section flush with navbar */
 .welcome-section {
   text-align: center;
   width: 100%;
-  margin: 0;   /* top=0, right=0, bottom=4rem, left=0 */
-  padding-top: 50px;
+  margin: 0;           /* no margin above/below */
+  padding-top: 20px;   /* optional internal spacing */
+  padding-bottom: 50px;
 }
 
+/* Headings inside welcome section */
 .welcome-section h2 {
   font-size: 2rem;
   color: #fcfcfc;
+  margin-top: 0;       /* remove extra top margin */
   margin-bottom: 1rem;
 }
 
 .welcome-section p {
   color: #fcfcfc;
   font-size: 1.2rem;
+  margin-top: 0;
   margin-bottom: 2rem;
 }
 
-
+/* Quick links row */
 .quick-links {
-  display: block;      /* ensure it starts on a new line */
-  margin-top: 0;    /* optional: space from above content */
-  gap: 20px;            /* Space between each link */
-  flex-wrap: nowrap;    /* Prevent links from breaking to a new line */
-  align-items: center;  /* Vertically center icons and text */
-}
-.quick-links .quick-link {
-  display: flex;        /* Keep icon + text in a row */
-  align-items: center;  /* Vertically center the icon and text */
-  text-decoration: none;
-  font-weight: 500;
-  color: inherit;
-}
-.quick-links .quick-icon {
-  margin-right: 5px;    /* Space between emoji/icon and text */
+  display: flex;           /* horizontal row */
+  justify-content: center; /* center links */
+  gap: 20px;               /* space between links */
+  flex-wrap: nowrap;       /* prevent wrapping */
+  margin-top: 20px;        /* spacing below welcome text */
+  align-items: center;
 }
 
+/* Individual quick links */
 .quick-link {
   display: flex;
   align-items: center;
@@ -98,21 +100,22 @@ title: Home
   text-decoration: none;
   color: white;
   font-weight: bold;
-  transition: background 0.3s;
+  transition: background 0.3s, transform 0.3s;
 }
 
 .quick-link:hover {
   transform: translateY(-5px);
   box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
   background: #667eea;
-  color: white;
 }
 
+/* Quick icons */
 .quick-icon {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
 }
 
+/* Latest tutorials section */
 .latest-tutorials {
   margin: 4rem 0;
 }
@@ -124,12 +127,14 @@ title: Home
   text-align: center;
 }
 
+/* Grid for tutorial previews */
 .tutorial-preview {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
 }
 
+/* Preview cards */
 .preview-card {
   background: white;
   padding: 2rem;
@@ -161,12 +166,12 @@ title: Home
   font-weight: 500;
 }
 
+/* Responsive tweaks */
 @media (max-width: 768px) {
-  
   .quick-links {
     gap: 1rem;
   }
-  
+
   .quick-link {
     min-width: 120px;
     padding: 1rem;
