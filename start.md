@@ -3,15 +3,6 @@ layout: default
 title: Get Started with Sampling
 ---
 
-<!-- Navigation Bar -->
-<!-- <div class="top-nav">
-  <a href="{{ site.baseurl }}/" class="nav-link">Home</a>
-  <a href="{{ site.baseurl }}/start" class="nav-link active">Start</a>
-  <a href="{{ site.baseurl }}/sampling-tools" class="nav-link">Sampling tools</a>
-  <a href="{{ site.baseurl }}/examples" class="nav-link">Examples</a>
-  <a href="{{ site.baseurl }}/projects" class="nav-link">Projects</a>
-</div> -->
-
 <div class="page-header">
   <h1>🚀 Get Started with Sampling</h1>
   <p>Begin your journey into the world of sampling algorithms</p>

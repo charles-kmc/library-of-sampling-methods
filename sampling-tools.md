@@ -21,8 +21,8 @@ title: Sampling Tools
   <p class="section-description">Fundamental sampling techniques for simple distributions</p>
   
   <div class="tools-grid">
-  <!-- {% assign tools = site.start | sort: 'order' %}   -->
-  {% assign tools = site.start | sort: 'order' %}  
+    <!-- {% assign tools = site.start | sort: 'order' %}   -->
+    {% assign tools = site.start | sort: 'order' %}  
     {% for tool in basic_tools %}
     <div class="tool-card" data-aos="fade-up">
       <div class="tool-card-header">
@@ -34,7 +34,7 @@ title: Sampling Tools
       <div class="tool-card-footer">
         <span class="tool-type">{{ tool.type }}</span>
         <a href="{{ site.baseurl }}{{ tool.url }}" class="tool-link">
-          Learn More <i class="fas fa-arrow-right"></i>
+          Learn More Here ... <i class="fas fa-arrow-right"></i>
         </a>
       </div>
     </div>
