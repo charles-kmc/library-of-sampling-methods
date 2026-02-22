@@ -48,14 +48,14 @@ collections:
     permalink: /tools/:name/
   examples:
     output: true
-    permalink: /examples/:path/
+    permalink: /examples/:name/
 
 defaults:
   - scope:
       path: ""
       type: "tools"
     values:
-      layout: "tool"
+      layout: "tools"
       author: "Joel & Charlesquin"
   - scope:
       path: ""
