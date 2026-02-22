@@ -276,8 +276,6 @@ body {
 
 /* Navigation Bar - Serre Lab Style */
 .top-nav {
-  /* display: flex; */
-  /* justify-content: center; */
   gap: 2.5rem;
   padding: 1.2rem 2rem;
   background: white;
@@ -286,6 +284,7 @@ body {
   top: 0;
   z-index: 1000;
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  justify-content: flex-end; 
 }
 .nav-container {
   max-width: 1200px;
@@ -306,9 +305,7 @@ body {
   transition: color 0.3s ease;
   background: transparent;
   border-radius: 0;
-  text-transform: uppercase;
   letter-spacing: 0.1px;
-  white-space: nowrap;  /* Prevents text wrapping *
 }
 
 .top-nav .nav-link::before {
