@@ -184,7 +184,7 @@ title: Home
 
   const backgrounds = [
     "{{ site.baseurl }}/assets/images/logo2.jpg",
-    "{{ site.baseurl }}/assets/images/logo.png"
+    "{{ site.baseurl }}/assets/images/logo.png",
     "{{ site.baseurl }}/assets/images/logo1.png"
   ];
 
