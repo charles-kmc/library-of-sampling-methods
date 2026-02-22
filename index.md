@@ -165,18 +165,6 @@ title: Home
   text-decoration: none;
   font-weight: 500;
 }
-
-/* Responsive tweaks */
-@media (max-width: 768px) {
-  .quick-links {
-    gap: 1rem;
-  }
-
-  .quick-link {
-    min-width: 120px;
-    padding: 1rem;
-  }
-}
 </style>
 
 <script>
