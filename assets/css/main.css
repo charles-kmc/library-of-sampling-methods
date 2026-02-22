@@ -179,7 +179,7 @@ body {
 .welcome-overlay {
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(52, 152, 219, 0.85) 0%, rgba(102, 126, 234, 0.85) 100%);
+  /* background: linear-gradient(135deg, rgba(52, 152, 219, 0.85) 0%, rgba(102, 126, 234, 0.85) 100%); */
   padding: 4rem 0;
   backdrop-filter: blur(2px); /* Slight blur effect on background */
 }
@@ -193,10 +193,11 @@ body {
 
 .welcome-overlay h2 {
   font-size: 2.5rem;
-  font-weight: 300;
+  font-weight: bold;   /* or 700 */
   margin-bottom: 1.5rem;
   text-shadow: 0 2px 4px rgba(0,0,0,0.2);
   letter-spacing: -0.5px;
+  color: white;
 }
 
 .welcome-overlay p {
@@ -207,27 +208,6 @@ body {
   text-shadow: 0 1px 2px rgba(0,0,0,0.2);
 }
 
-.welcome-button {
-  display: inline-block;
-  padding: 1rem 2.5rem;
-  background: white;
-  color: #3498db;
-  text-decoration: none;
-  border-radius: 50px;
-  font-weight: 600;
-  font-size: 1.1rem;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-  border: 2px solid transparent;
-}
-
-.welcome-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-  background: transparent;
-  color: white;
-  border-color: white;
-}
 
 /* Different overlay variations you can use */
 
