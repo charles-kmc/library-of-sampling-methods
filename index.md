@@ -59,8 +59,6 @@ title: Home
   padding-bottom: 50px;
   border-radius: 20px; 
   overflow: hidden;
-  background-size: cover;
-  background-position: center;
   transition: background-image 1s ease-in-out;
 }
 
@@ -184,8 +182,8 @@ title: Home
 
   const backgrounds = [
     "{{ site.baseurl }}/assets/images/logo2.jpg",
-    "{{ site.baseurl }}/assets/images/logo.png",
-    "{{ site.baseurl }}/assets/images/logo1.png"
+    "{{ site.baseurl }}/assets/images/logo.jpg",
+    "{{ site.baseurl }}/assets/images/logo1.jpg"
   ];
 
   let current = 0;
