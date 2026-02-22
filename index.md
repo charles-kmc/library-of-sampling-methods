@@ -2,7 +2,8 @@
 layout: default
 title: Home
 ---
-<div class="welcome-section" style="background-image: url('{{ site.baseurl }}/assets/images/background.png');">
+<!-- <div class="welcome-section" style="background-image: url('{{ site.baseurl }}/assets/images/background.png');"> -->
+<div class="welcome-section" style="background-image: url('{{ site.baseurl }}/assets/images/logo.jpg');">
   <div class="welcome-overlay">
     <div class="container">
       <h2>Welcome to the Sampling Algorithms Lab</h2>
@@ -51,7 +52,7 @@ title: Home
 .welcome-section {
   text-align: center;
   width: 100%;
-  margin: 0 0 4rem 0;   /* top=0, right=0, bottom=4rem, left=0 */
+  margin: -1px 0 0 0;   /* top=0, right=0, bottom=4rem, left=0 */
 }
 
 .welcome-section h2 {
